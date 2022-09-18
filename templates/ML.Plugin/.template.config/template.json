@@ -1,0 +1,264 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "yamiM0NSTER",
+  "classifications": ["MelonLoader", "Library"],
+  "name": "MelonLoader Plugin",
+  "description": "A MelonLoader Plugin project",
+  "groupIdentity": "ML.Plugin",
+  "identity": "ML.Plugin.CSharp",
+  "shortName": "ml-plugin",
+  "defaultName": "MelonPlugin1",
+  "tags": {
+    "language": "C#",
+    "type": "project"
+  },
+  "sourceName": "ML.Plugin",
+  "symbols": {
+    "PluginName": {
+      "type": "parameter",
+      "datatype": "text",
+      "displayName": "Plugin Name",
+      "replaces": "{PluginName}",
+      "isRequired": true
+    },
+    "PluginAuthor": {
+      "type": "parameter",
+      "datatype": "text",
+      "displayName": "Plugin Author",
+      "replaces": "{PluginAuthor}",
+      "isRequired": true
+    },
+    "PluginVersion": {
+      "type": "parameter",
+      "datatype": "text",
+      "displayName": "Plugin Version",
+      "replaces": "{PluginVersion}",
+      "defaultValue": "0.1.0",
+      "isRequired": false
+    },
+    "PluginDownloadURL": {
+      "type": "parameter",
+      "datatype": "text",
+      "displayName": "Plugin URL",
+      "replaces": "{PluginDownloadURL}",
+      "defaultValue": "",
+      "description": "Download URL for the plugin (eg. github repo link)",
+      "isRequired": false
+    },
+    "MLPath": {
+      "type": "parameter",
+      "datatype": "text",
+      "replaces": "{MLPath}",
+      "description": "MelonLoader directory path\n\nLeave empty to add MelonLoader references yourself",
+      "displayName": "MelonLoader directory",
+      "defaultValue": ""
+    },
+    "DefaultNamespace": {
+      "type": "parameter",
+      "datatype": "text",
+      "displayName": "Default project namespace",
+      "defaultValue": "",
+      "description": "Leave empty to use simplified project name(default behaviour)",
+      "replaces": "DefaultNamespace",
+      "isRequired": false
+    },
+    "UseCustomRootNamespace": {
+      "type": "computed",
+      "value": "(DefaultNamespace != \"\")"
+    },
+    "AuthorConsoleColor": {
+      "type": "parameter",
+      "datatype": "choice",
+      "choices": [
+        {
+          "choice": "Default",
+          "displayName": "Default"
+        },
+        {
+          "choice": "Black",
+          "displayName": "Black"
+        },
+        {
+          "choice": "DarkBlue",
+          "displayName": "Dark Blue"
+        },
+        {
+          "choice": "DarkGreen",
+          "displayName": "Dark Green"
+        },
+        {
+          "choice": "DarkCyan",
+          "displayName": "Dark Cyan"
+        },
+        {
+          "choice": "DarkRed",
+          "displayName": "Dark Red"
+        },
+        {
+          "choice": "DarkMagenta",
+          "displayName": "Dark Magenta"
+        },
+        {
+          "choice": "DarkYellow",
+          "displayName": "Dark Yellow"
+        },
+        {
+          "choice": "Gray",
+          "displayName": "Gray"
+        },
+        {
+          "choice": "DarkGray",
+          "displayName": "Dark Gray"
+        },
+        {
+          "choice": "Blue",
+          "displayName": "Blue"
+        },
+        {
+          "choice": "Green",
+          "displayName": "Green"
+        },
+        {
+          "choice": "Cyan",
+          "displayName": "Cyan"
+        },
+        {
+          "choice": "Red",
+          "displayName": "Red"
+        },
+        {
+          "choice": "Magenta",
+          "displayName": "Magenta"
+        },
+        {
+          "choice": "Yellow",
+          "displayName": "Yellow"
+        },
+        {
+          "choice": "White",
+          "displayName": "White"
+        }
+      ],
+      "displayName": "Author console color",
+      "replaces": "{AuthorConsoleColor}",
+      "defaultValue": "Default"
+    },
+    "UseAuthorConsoleColor": {
+      "type": "computed",
+      "value": "(AuthorConsoleColor != \"Default\")"
+    },
+    "PluginConsoleColor": {
+      "type": "parameter",
+      "datatype": "choice",
+      "choices": [
+        {
+          "choice": "Default",
+          "displayName": "Default"
+        },
+        {
+          "choice": "Black",
+          "displayName": "Black"
+        },
+        {
+          "choice": "DarkBlue",
+          "displayName": "Dark Blue"
+        },
+        {
+          "choice": "DarkGreen",
+          "displayName": "Dark Green"
+        },
+        {
+          "choice": "DarkCyan",
+          "displayName": "Dark Cyan"
+        },
+        {
+          "choice": "DarkRed",
+          "displayName": "Dark Red"
+        },
+        {
+          "choice": "DarkMagenta",
+          "displayName": "Dark Magenta"
+        },
+        {
+          "choice": "DarkYellow",
+          "displayName": "Dark Yellow"
+        },
+        {
+          "choice": "Gray",
+          "displayName": "Gray"
+        },
+        {
+          "choice": "DarkGray",
+          "displayName": "Dark Gray"
+        },
+        {
+          "choice": "Blue",
+          "displayName": "Blue"
+        },
+        {
+          "choice": "Green",
+          "displayName": "Green"
+        },
+        {
+          "choice": "Cyan",
+          "displayName": "Cyan"
+        },
+        {
+          "choice": "Red",
+          "displayName": "Red"
+        },
+        {
+          "choice": "Magenta",
+          "displayName": "Magenta"
+        },
+        {
+          "choice": "Yellow",
+          "displayName": "Yellow"
+        },
+        {
+          "choice": "White",
+          "displayName": "White"
+        }
+      ],
+      "displayName": "Plugin console color",
+      "replaces": "{PluginConsoleColor}",
+      "defaultValue": "Default"
+    },
+    "UsePluginConsoleColor": {
+      "type": "computed",
+      "value": "(PluginConsoleColor != \"Default\")"
+    },
+    "UseUnityAnalyzer": {
+      "type": "parameter",
+      "datatype": "bool",
+      "displayName": "Use Unity Code Analyzer",
+      "defaultValue": "False",
+      "description": "Requires Visual Studio Tools for Unity installed."
+    },
+    "UseNullables": {
+      "type": "parameter",
+      "datatype": "bool",
+      "displayName": "Use Nullable reference types",
+      "defaultValue": "False"
+    }
+  },
+  "primaryOutputs": [
+    { "path": "ML.Plugin.csproj" },
+    {
+      "condition": "(HostIdentifier != \"dotnetcli\")",
+      "path": "PluginMain.cs"
+    }
+  ],
+  "postActions": [
+    {
+      "condition": "(HostIdentifier != \"dotnetcli\")",
+      "description": "Opens PluginMain.cs in the editor",
+      "manualInstructions": [],
+      "actionId": "84C0DA21-51C8-4541-9940-6CA19AF04EE6",
+      "args": {
+        "files": "1"
+      },
+      "continueOnError": true
+    }
+  ]
+}

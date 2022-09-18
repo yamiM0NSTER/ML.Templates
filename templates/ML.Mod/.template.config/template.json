@@ -1,0 +1,269 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "yamiM0NSTER",
+  "classifications": ["MelonLoader", "Library"],
+  "name": "MelonLoader Mod",
+  "description": "A MelonLoader Mod project",
+  "groupIdentity": "ML.Mod",
+  "identity": "ML.Mod.CSharp",
+  "shortName": "ml-mod",
+  "defaultName": "MelonMod1",
+  "tags": {
+    "language": "C#",
+    "type": "project"
+  },
+  "sourceName": "ML.Mod",
+  "guids": [
+    "0A60004C-5418-44CE-B5EB-211736D05A73",
+    "45e6c2f2-b0a4-440b-9921-0d1b0151cdc0"
+  ],
+  "symbols": {
+    "ModName": {
+      "type": "parameter",
+      "datatype": "text",
+      "displayName": "Mod Name",
+      "replaces": "{ModName}",
+      "isRequired": true
+    },
+    "ModAuthor": {
+      "type": "parameter",
+      "datatype": "text",
+      "displayName": "Mod Author",
+      "replaces": "{ModAuthor}",
+      "isRequired": true
+    },
+    "ModVersion": {
+      "type": "parameter",
+      "datatype": "text",
+      "displayName": "Mod Version",
+      "replaces": "{ModVersion}",
+      "defaultValue": "0.1.0",
+      "isRequired": false
+    },
+    "ModDownloadURL": {
+      "type": "parameter",
+      "datatype": "text",
+      "displayName": "Download URL",
+      "replaces": "{ModDownloadURL}",
+      "defaultValue": "",
+      "description": "Download URL for the mod (eg. github repo link)",
+      "isRequired": false
+    },
+    "MLPath": {
+      "type": "parameter",
+      "datatype": "text",
+      "replaces": "{MLPath}",
+      "description": "MelonLoader directory path\n\nLeave empty to add MelonLoader references yourself",
+      "displayName": "MelonLoader directory",
+      "defaultValue": "",
+      "isRequired": true
+    },
+    "DefaultNamespace": {
+      "type": "parameter",
+      "datatype": "text",
+      "displayName": "Default project namespace",
+      "replaces": "DefaultNamespace",
+      "description": "Leave empty to use simplified project name(default behaviour)",
+      "defaultValue": "",
+      "isRequired": false
+    },
+    "UseCustomRootNamespace": {
+      "type": "computed",
+      "value": "(DefaultNamespace != \"\")"
+    },
+    "AuthorConsoleColor": {
+      "type": "parameter",
+      "datatype": "choice",
+      "choices": [
+        {
+          "choice": "Default",
+          "displayName": "Default"
+        },
+        {
+          "choice": "Black",
+          "displayName": "Black"
+        },
+        {
+          "choice": "DarkBlue",
+          "displayName": "Dark Blue"
+        },
+        {
+          "choice": "DarkGreen",
+          "displayName": "Dark Green"
+        },
+        {
+          "choice": "DarkCyan",
+          "displayName": "Dark Cyan"
+        },
+        {
+          "choice": "DarkRed",
+          "displayName": "Dark Red"
+        },
+        {
+          "choice": "DarkMagenta",
+          "displayName": "Dark Magenta"
+        },
+        {
+          "choice": "DarkYellow",
+          "displayName": "Dark Yellow"
+        },
+        {
+          "choice": "Gray",
+          "displayName": "Gray"
+        },
+        {
+          "choice": "DarkGray",
+          "displayName": "Dark Gray"
+        },
+        {
+          "choice": "Blue",
+          "displayName": "Blue"
+        },
+        {
+          "choice": "Green",
+          "displayName": "Green"
+        },
+        {
+          "choice": "Cyan",
+          "displayName": "Cyan"
+        },
+        {
+          "choice": "Red",
+          "displayName": "Red"
+        },
+        {
+          "choice": "Magenta",
+          "displayName": "Magenta"
+        },
+        {
+          "choice": "Yellow",
+          "displayName": "Yellow"
+        },
+        {
+          "choice": "White",
+          "displayName": "White"
+        }
+      ],
+      "displayName": "Author console color",
+      "replaces": "{AuthorConsoleColor}",
+      "defaultValue": "Default"
+    },
+    "UseAuthorConsoleColor": {
+      "type": "computed",
+      "value": "(AuthorConsoleColor != \"Default\")"
+    },
+    "ModConsoleColor": {
+      "type": "parameter",
+      "datatype": "choice",
+      "choices": [
+        {
+          "choice": "Default",
+          "displayName": "Default"
+        },
+        {
+          "choice": "Black",
+          "displayName": "Black"
+        },
+        {
+          "choice": "DarkBlue",
+          "displayName": "Dark Blue"
+        },
+        {
+          "choice": "DarkGreen",
+          "displayName": "Dark Green"
+        },
+        {
+          "choice": "DarkCyan",
+          "displayName": "Dark Cyan"
+        },
+        {
+          "choice": "DarkRed",
+          "displayName": "Dark Red"
+        },
+        {
+          "choice": "DarkMagenta",
+          "displayName": "Dark Magenta"
+        },
+        {
+          "choice": "DarkYellow",
+          "displayName": "Dark Yellow"
+        },
+        {
+          "choice": "Gray",
+          "displayName": "Gray"
+        },
+        {
+          "choice": "DarkGray",
+          "displayName": "Dark Gray"
+        },
+        {
+          "choice": "Blue",
+          "displayName": "Blue"
+        },
+        {
+          "choice": "Green",
+          "displayName": "Green"
+        },
+        {
+          "choice": "Cyan",
+          "displayName": "Cyan"
+        },
+        {
+          "choice": "Red",
+          "displayName": "Red"
+        },
+        {
+          "choice": "Magenta",
+          "displayName": "Magenta"
+        },
+        {
+          "choice": "Yellow",
+          "displayName": "Yellow"
+        },
+        {
+          "choice": "White",
+          "displayName": "White"
+        }
+      ],
+      "displayName": "Mod console color",
+      "replaces": "{ModConsoleColor}",
+      "defaultValue": "Default"
+    },
+    "UseModConsoleColor": {
+      "type": "computed",
+      "value": "(ModConsoleColor != \"Default\")"
+    },
+    "UseUnityAnalyzer": {
+      "type": "parameter",
+      "datatype": "bool",
+      "displayName": "Use Unity Code Analyzer",
+      "defaultValue": "true",
+      "description": "Requires Visual Studio Tools for Unity installed."
+    },
+    "UseNullables": {
+      "type": "parameter",
+      "datatype": "bool",
+      "displayName": "Use Nullable reference types",
+      "defaultValue": "False"
+    }
+  },
+  "primaryOutputs": [
+    { "path": "ML.Mod.csproj" },
+    {
+      "condition": "(HostIdentifier != \"dotnetcli\")",
+      "path": "ModMain.cs"
+    }
+  ],
+  "postActions": [
+    {
+      "condition": "(HostIdentifier != \"dotnetcli\")",
+      "description": "Opens ModMain.cs in the editor",
+      "manualInstructions": [],
+      "actionId": "84C0DA21-51C8-4541-9940-6CA19AF04EE6",
+      "args": {
+        "files": "1"
+      },
+      "continueOnError": true
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net472</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <Nullable Condition="'$(UseNullables)' == 'False'">disable</Nullable>
+    <Nullable Condition="'$(UseNullables)' == 'True'">enable</Nullable>
+    <RootNamespace Condition="'$(DefaultNamespace)' != ''">DefaultNamespace</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup Condition="'$(UseUnityAnalyzer)' == 'True'">
+    <Analyzer Include="$(DevEnvDir)Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(MLPath)' != ''">
+    <Reference Include="0Harmony">
+      <HintPath>{MLPath}\0Harmony.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="MelonLoader">
+      <HintPath>{MLPath}\MelonLoader.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+</Project>
+<!--Generated with love using ML.Templates-->

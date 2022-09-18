@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <PackageType>Template</PackageType>
+    <PackageVersion>1.0</PackageVersion>
+    <PackageId>yamiM0NSTER.ML.Templates</PackageId>
+    <Title>ML.Templates by yamiM0NSTER</Title>
+    <Authors>yamiM0NSTER</Authors>
+    <Description>Templates to use when creating a mod/plugin for MelonLoader.</Description>
+    <PackageTags>dotnet-new;templates;contoso</PackageTags>
+    <TargetFramework>netstandard2.0</TargetFramework>
+
+    <IncludeContentInPack>true</IncludeContentInPack>
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+    <ContentTargetFolders>content</ContentTargetFolders>
+    <NoWarn>$(NoWarn);NU5128</NoWarn>
+    <NoDefaultExcludes>true</NoDefaultExcludes>
+    <PackageIcon>icon.png</PackageIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="templates\**\*" Exclude="templates\**\bin\**;templates\**\obj\**" />
+    <Compile Remove="**\*" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="images\icon.png" Pack="true" PackagePath="" AllowColorInversion="false"/>
+  </ItemGroup>
+
+</Project>
